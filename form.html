@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <style type="text/css" media="all">
+     
+  </style>
+</head>
+<body>
+  <form id="loginForm" onsubmit="return validateLogin()">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <input type="submit" value="Login">
+  </form>
+
+  <script>
+
+
+function validateLogin() {
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
+
+  // Contoh validasi sederhana, gantilah dengan metode keamanan yang lebih baik di produksi
+  if (username === 'user' && password === 'pass') {
+    alert('Login berhasil! Redirect ke halaman berikutnya...');
+    // Tambahkan kode untuk pindah ke halaman berikutnya di sini
+    window.location.href = 'index.html'; // Ganti dengan URL halaman berikutnya
+    return false; // Hindari submit formulir
+  } else {
+    alert('Login gagal. Silakan cek kembali username dan password Anda.');
+    return false; // Hindari submit formulir
+  }
+}
+</script>
